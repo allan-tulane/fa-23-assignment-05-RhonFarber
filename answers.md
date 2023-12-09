@@ -17,12 +17,13 @@ The work done by delete-min in a d-ary heap is O(log_d n), where n is the height
 The work done by insert in a d-ary heap is also O(log_d n), where n is the height of the heap. Each recursive call is doing constant work for swapping and number of swaps is the height of the heap.
 
 - **1c.**
-The work for using a d-ary heap for Dijkstra's algorithm would be the work of delete-min + the work of insert. The work of delete-min is |V| calls each doing O(log_d |V|) work, so O(∣V∣log_d ∣V∣) total work. The work of insert is |E| calls each doing O(log_d ∣V∣) work, so O(∣E∣log_d ∣V∣) total work. Therefore, the total work for the entire algorithm is O(∣V∣log_d ∣V∣) + O(∣E∣log_d ∣V∣).
+The work for using a d-ary heap for Dijkstra's algorithm would be the work of delete-min + the work of insert. The work of delete-min is |V| calls each doing O(log_d |V|) work, so O(|V|log_d |V|) total work. The work of insert is |E| calls each doing O(log_d |V|) work, so O(|E|log_d |V|) total work. Therefore, the total work for the entire algorithm is O(|V|log_d |V|) + O(|E|log_d |V|).
 
 - **1d.**
 
 
 - **2a.**
+
 k = 0:
 APSP(0,0,0) = 0.0
 APSP(0,1,0) = -2.0
@@ -33,6 +34,7 @@ APSP(1,2,0) = 1.0
 APSP(2,0,0) = 2.0
 APSP(2,1,0) = 1.0
 APSP(2,2,0) = 0.0
+
 k = 1:
 APSP(0,0,1) = 0.0
 APSP(0,1,1) = -2.0
@@ -43,6 +45,7 @@ APSP(1,2,1) = 1.0
 APSP(2,0,1) = -1.0
 APSP(2,1,1) = 1.0
 APSP(2,2,1) = 0.0
+
 k = 2:
 APSP(0,0,2) = 0.0
 APSP(0,1,2) = -2.0
