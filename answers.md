@@ -78,6 +78,7 @@ The work of Johnson's algorithm is O(|V| * |E| log |E|). In comparison to the al
 Yes, a solution to MST is guaranteed to be a solution to MMET. This is because the process of minimizing the total weight of the tree also minimizes the weight of the heaviest edge included in that tree (greedy criteria is valid). You can also prove this by contradiction. If an MST did not satisfy the MMET criterion (minimizing the weight of the heaviest edge in the spanning tree), it would imply that there exists a spanning tree with a lower maximum edge weight than the MST. However, this would contradict the principle of MST, where every edge is chosen to ensure the lowest total and individual edge weights.
 
 - **3b.**
+```
 def findNextBestMST(graph):
     optimalMST = primsAlgorithm(graph)
     minHeap = new MinHeap()
@@ -98,7 +99,6 @@ def findNextBestMST(graph):
     minHeap.pop() # Remove the optimal MST
     nextBestMST = minHeap.pop() # Get the next best MST
     return nextBestMST
-
-
+```
 - **3c.**
 This algorithm would be asymptotically dominated by Prim's algorithm which has work of O(|E| log |E|). This is because the swaps would be done in constant time.
