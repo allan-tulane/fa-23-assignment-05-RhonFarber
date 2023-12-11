@@ -80,30 +80,23 @@ Yes, a solution to MST is guaranteed to be a solution to MMET. This is because t
 - **3b.**
 def findNextBestMST(graph):
     optimalMST = primsAlgorithm(graph)
-
     minHeap = new MinHeap()
-
     for each edge in optimalMST.edges:
         # Remove the edge from the optimal MST
         tempMST = optimalMST.removeEdge(edge)
-
         # Try adding each other edge in the graph
         for each otherEdge in graph.edges:
             if otherEdge not in optimalMST:
                 # Add the edge to the temporary MST
                 newMST = tempMST.addEdge(otherEdge)
-
                 # Check if the new MST is a valid tree
                 if isValidTree(newMST, graph.nodes):
                     # Calculate the weight of the new MST
                     weight = calculateWeight(newMST)
-
                     # Add the new MST and its weight to the min heap
                     minHeap.add((weight, newMST))
-
     minHeap.pop() # Remove the optimal MST
     nextBestMST = minHeap.pop() # Get the next best MST
-
     return nextBestMST
 
 
