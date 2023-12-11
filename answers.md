@@ -81,7 +81,7 @@ Yes, a solution to MST is guaranteed to be a solution to MMET. This is because t
 def findNextBestMST(graph):
     optimalMST = primsAlgorithm(graph)
     minHeap = new MinHeap()
-    for each edge in optimalMST.edges:
+        for each edge in optimalMST.edges:
         # Remove the edge from the optimal MST
         tempMST = optimalMST.removeEdge(edge)
         # Try adding each other edge in the graph
